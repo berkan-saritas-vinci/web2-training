@@ -41,7 +41,6 @@ router.get("/error", (_req, _res, _next) => {
   // equivalent of next(new Error("This is an error"));
 });
 
-
 /* Read all the pizzas from the menu
    GET /pizzas?order=title : ascending order by title
    GET /pizzas?order=-title : descending order by title
@@ -71,7 +70,7 @@ router.get("/:id", (req, res) => {
   const pizzas = parse(jsonDbPath, defaultPizzas);
   const idInRequest = parseInt(req.params.id, 10);
   const indexOfPizzaFound = pizzas.findIndex(
-    (pizza: Pizza) => pizza.id === idInRequest
+    (pizza: Pizza) => pizza.id === idInRequest,
   );
 
   if (indexOfPizzaFound < 0) return res.sendStatus(404);

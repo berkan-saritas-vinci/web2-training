@@ -1,0 +1,55 @@
+### Base URL
+@baseUrl = http://localhost:3000
+
+### Lire tous les textes
+GET {{baseUrl}}/textes
+
+###
+
+### Lire un texte par ID
+# Remplace l'ID par un vrai UUID présent dans ton JSON
+GET {{baseUrl}}/textes/f64079e4-520e-4529-b0a9-358a51457ace
+
+###
+
+### Lire tous les textes de niveau easy
+GET {{baseUrl}}/textes?level=easy
+
+###
+
+### Lire tous les textes de niveau medium
+GET {{baseUrl}}/textes?level=medium
+
+###
+
+### Lire tous les textes de niveau hard
+GET {{baseUrl}}/textes?level=hard
+
+###
+
+### Créer un texte
+POST {{baseUrl}}/textes
+Content-Type: application/json
+
+{
+    "content": "TypeScript permet d'ajouter du typage statique à JavaScript.",
+    "level": "easy"
+}
+
+###
+
+### Supprimer un texte
+# Remplace l'ID par un vrai UUID
+DELETE {{baseUrl}}/textes/f64079e4-520e-4529-b0a9-358a51457ace
+
+###
+
+### Mettre à jour complètement un texte
+# Remplace l'ID par un vrai UUID
+PUT {{baseUrl}}/textes/ID_ICI
+Content-Type: application/json
+
+{
+    "content": "Texte modifié pour un niveau intermédiaire.",
+    "level": "medium"
+}

@@ -1,0 +1,21 @@
+### Read all films with File variable
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/films
+
+
+### Read a single film
+GET {{baseUrl}}/films/3
+
+### Read all films cheaper or equal to 3 €
+GET {{baseUrl}}/films/?minimum-duration=140
+
+### Create a drink
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "title": "Ducobu v2",
+    "director": "Moi",
+    "duration": 120,
+    "imageUrl": "https://example.com/image.jpg"
+}
