@@ -4,7 +4,8 @@ import './index.css'
 import App from '../src/components/App/index.tsx'
 
 createRoot(document.getElementById('root')!).render(
+  
   <StrictMode>
-    <App />
+    <App title='Get started' message='You are a master in the art of clicking !'/>
   </StrictMode>,
 )
