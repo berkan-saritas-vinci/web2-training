@@ -7,10 +7,22 @@ import './App.css'
 interface AppProps {
   title: string;
   message: string;
+  buttonMessage: string;
 }
 
-function App({title, message}: AppProps) {
+function App({title, message, buttonMessage}: AppProps) {
   const [count, setCount] = useState(0);
+  const [onMouse, setOnMouse] = useState(false);
+
+  const handleMouseEnter = () => {
+    console.log(`Your mouse in on the button`);
+    setOnMouse(true);
+  }
+
+  const handleMouseLeave = () => {
+    console.log(`You leave the button`);
+    setOnMouse(false);
+  }
 
   return (
     <>
@@ -27,10 +39,13 @@ function App({title, message}: AppProps) {
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
         </div>
+        {onMouse ? <p>{buttonMessage}</p> : null}
         <button
           type="button"
           className="counter"
           onClick={() => setCount((count) => count + 1)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           Count is {count}
         </button>
